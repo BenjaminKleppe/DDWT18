@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Required meta tags -->
+        <!-- Require meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -34,6 +34,37 @@
                     <h5><?= $page_subtitle ?></h5>
                     <p><?= $page_content ?></p>
                     <!-- Put your form here -->
+                    <div class="form-group row">
+                        <form action=<?= $form_action ?> method="POST">
+                            <label for="inputName" class="col-sm-2 col-form-
+label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputName" name="Name" value="<?php if (isset($serie_information)){echo $serie_information['name'];} ?>" required>
+                            </div>
+                            <label for="inputCreator" class="col-sm-2 col-form-
+label">Creator</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputCreator" name="Creator" value="<?php if (isset($serie_information)){echo $serie_information['creator'];} ?>" required>
+                            </div>
+                            <label for="inputSeasons" class="col-sm-2 col-form-
+label">Seasons</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="inputCreator" name="Seasons" value="<?php if (isset($serie_information)){echo $serie_information['seasons'];} ?>" required>
+                            </div>
+                            <label for="inputAbstract" class="col-sm-2 col-form-
+label">Abstract</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="inputAbstract" name="Abstract" required> <?php if (isset($serie_information)){echo htmlspecialchars($serie_information['abstract']);}  ?>
+ </textarea>
+                            </div>
+                            <input type="hidden" id="serie_id" name="serie_id" value="<?php if(isset($_GET['serie_id'])){echo $_GET['serie_id'];} ?>"/>
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary"><?= $submit_btn ?></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- Right column -->
