@@ -10,3 +10,17 @@
         <a href="/DDWT18/week2/add/" class="btn btn-primary">List yours</a>
     </div>
 </div>
+
+
+<!-- Users count -->
+<div class="card">
+    <div class="card-header">
+        Users
+    </div>
+    <div class="card-body">
+        <p class="count">Users overview already has</p>
+        <h2><?= $nbr_users ?></h2>
+        <p>users listed</p>
+        <a href="/DDWT18/week2/register/" class="btn btn-primary">Join now</a>
+    </div>
+</div>
