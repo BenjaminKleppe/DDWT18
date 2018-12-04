@@ -1,0 +1,15 @@
+{
+  "name": "BenjaminKleppe/DDWT18_week3",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Benjamin Kleppe",
+      "email": "b.kleppe@student.rug.nl"
+    }
+  ],
+  "require": {
+    "bramus/router": "1.3"
+  }
+}

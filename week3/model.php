@@ -19,6 +19,37 @@ error_reporting(E_ALL);
  * @param string $pass database password
  * @return pdo object
  */
+
+/* specify the content-type for the header */
+function http_content_type($content_type){
+    header('Content-Type: ' . $content_type);
+}
+
+/* set credentials */
+function set_cred($username, $password){
+    return [
+        'username'=> $username,
+        'password'=> $password
+    ];
+}
+
+/* check if the credentials are correct */
+function check_cred($cred){
+    if (!isset($_SERVER['PHP_AUTH_USER'])){
+        return False;
+    }
+    else {
+        if ($_SERVER['PHP_AUTH_USER'] != $cred['username']) {
+            return False;
+        } elseif ($_SERVER['PHP_AUTH_PW'] != $cred['password']) {
+            return False;
+        } else {
+            return True;
+        }
+    }
+}
+
+/* make connection to the database */
 function connect_db($host, $db, $user, $pass){
     $charset = 'utf8mb4';
 
